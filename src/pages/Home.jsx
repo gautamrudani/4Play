@@ -13,7 +13,7 @@ const Home = () =>{
                 <div className={styles.container}>
                     <Sidebar />
                     <MainContiner />
-                </div>
+                </div>  
                     <Footer />
             </div>
     ) ;

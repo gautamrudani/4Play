@@ -1,11 +1,11 @@
 import React from 'react';
 
-import '../maincontainer/maincontainer.scss';
+import styles from '../maincontainer/maincontainer.module.scss';
 
 const MainContiner = () =>{
     return (
      
-            <div className="maincontainer">
+            <div className={styles.maincontainer}>
                 This is MainContiner 
             </div>
        

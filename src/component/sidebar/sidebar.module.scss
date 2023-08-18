@@ -1,0 +1,50 @@
+@import "../../assets/css/variables";
+
+.mainDiv {
+  width: 250px;
+  background-color: $SecondaryBgColor;
+  // height: 100vh;
+  height: calc(100vh - 94px);
+  color: aliceblue;
+  padding: 30px 0px;
+  position: relative;
+
+  .logo {
+    padding: 0 30px;
+  }
+  .menu_items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 94%;
+
+    // height: 95%;
+    // background-color: red;
+    .Navbar {
+      .nav_item {
+        border-right: 7px solid transparent;
+        display: flex;
+        align-items: center;
+        padding: 15px 30px;
+   
+        &:hover {
+          border-color: $themeColor;
+          background-color: $TertiaryBgColor;
+          a {
+            color: $white-primary;
+          }
+        }
+        img {
+          width: 24px;
+          margin-right: 10px;
+          height: 24px;
+        }
+        a {
+          display: flex;
+          color: $White_Tertiary;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
