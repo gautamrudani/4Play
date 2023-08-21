@@ -1,12 +1,17 @@
 import React from 'react';
 
 import styles from '../maincontainer/maincontainer.module.scss';
+import SearchBar from  '../maincontainer/SearchBar';
+import Player from  '../maincontainer/Player';
+import SongList from  '../maincontainer/SongList';
 
 const MainContiner = () =>{
     return (
      
             <div className={styles.maincontainer}>
-                This is MainContiner 
+                <SearchBar />
+                <Player />
+                <SongList />
             </div>
        
     ) ;
