@@ -1,0 +1,83 @@
+@import "../../assets/css/variables";
+
+.playercontainer{
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  padding-top: 30px;
+
+  .songimage{
+    flex: 1;
+    margin-right: 20px;
+  }
+
+  .songdetails{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .songcontainer{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      .songname{
+        h5{
+          color: $white-primary;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 30px; 
+          margin: 0;
+          text-transform: capitalize;  
+        }
+        
+      }
+      .playbtn{
+        display: flex;
+        gap: 30px;
+        align-items: center;
+
+        img{
+          width: 26px;
+          height: 26px;
+        }
+        button{
+          height: 40px;
+          padding: 5px 50px;
+          border-radius: 25px;
+          background: $themeColor;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 20px;
+          color: $white-primary;
+          border: 0;
+
+        }
+      }
+
+     
+    }
+
+    .songmetadata{
+      display: flex;
+      gap: 45px;
+      p{
+        margin: 2px 0px;
+      }
+      font-size: 14px;
+      color: $White_Tertiary;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+    }
+
+    .songwave{
+        img{
+          border-radius: 3px;
+          border: 1px solid rgba(163, 120, 233, 0.15);
+          mix-blend-mode: screen;
+        }
+    }
+  }
+}
