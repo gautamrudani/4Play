@@ -26,3 +26,8 @@ body {
 a{
   text-decoration: none;
 }
+
+@mixin left-border {
+  border-left: 1px solid #ffffff40;
+  padding-left: 10px;
+}

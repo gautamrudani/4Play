@@ -1,0 +1,45 @@
+@import "../../assets/css/variables";
+
+.songitemcontainer {
+  display: flex;
+  font-size: 14px;
+  color: #949494;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  border: 0px solid $white-primary;
+  opacity: 0.2;
+  box-shadow: 0px 37.48896408081055px 59.98234176635742px 0px
+    rgba(0, 0, 0, 0.02);
+  padding: 10px;
+
+  .songImage {
+    flex: 1;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 3px;
+      align-self: center;
+    }
+  }
+  .songName {
+    flex: 4;
+    align-self: center;
+  }
+  .songartist {
+    flex: 5;
+    align-self: center;
+  }
+  .songduration {
+    flex: 2;
+    align-self: center;
+  }
+}
+
+.evenBG{
+background-color: red;
+}
+
+.oddBG{
+  background-color: blue;
+}
