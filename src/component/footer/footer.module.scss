@@ -1,5 +1,8 @@
 .footerarea{
     height: 94px;
     width: 100%;
-    background-color: bisque;
+    border: 1px solid #313131;
+    background: var(--secondary-bg, #121212);
+    display: flex;
+    padding: 10px;
 }

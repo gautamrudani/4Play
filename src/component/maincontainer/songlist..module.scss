@@ -2,7 +2,7 @@
  
 
 .SongListcontainer{
-
+    overflow: hidden;
   .songitemcontainer{
     display: flex;
     gap: 5px;
@@ -34,9 +34,10 @@
   }
 
   .songItems{
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    // gap: 10px;
+    height: 90%;
+    overflow-y: scroll;
   }
 }

@@ -1,11 +1,16 @@
 import React from 'react';
 
 import styles from  '../footer/footer.module.scss';
+import PlayerSongDetails from './PlayerSongDetails'; 
+import PlayerControl from './PlayerControl';
+import PlayerVolume from './PlayerVolume'; 
 
 const Footer = () =>{
     return (
             <div className={styles.footerarea}>
-                This is Footer a
+                <PlayerSongDetails />
+                <PlayerControl />
+                <PlayerVolume />
             </div>
     ) ;
 }

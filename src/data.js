@@ -40,5 +40,26 @@ export const SongData = [
     "artwork": "https://samplesongs.netlify.app/album-arts/without-me.jpg",
     "url": "https://samplesongs.netlify.app/Without%20Me.mp3",
     "id": "6"
+  },
+  {
+    "title": "Hate Me",
+    "artist": "Ellie Goulding",
+    "artwork": "https://samplesongs.netlify.app/album-arts/hate-me.jpg",
+    "url": "https://samplesongs.netlify.app/Hate%20Me.mp3",
+    "id": "7"
+  },
+  {
+    "title": "Solo",
+    "artist": "Clean Bandit",
+    "artwork": "https://samplesongs.netlify.app/album-arts/solo.jpg",
+    "url": "https://samplesongs.netlify.app/Solo.mp3",
+    "id": "8"
+  },
+  {
+    "title": "Without Me",
+    "artist": "Halsey",
+    "artwork": "https://samplesongs.netlify.app/album-arts/without-me.jpg",
+    "url": "https://samplesongs.netlify.app/Without%20Me.mp3",
+    "id": "9"
   }
 ]

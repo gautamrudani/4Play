@@ -1,0 +1,48 @@
+.playersongsetails{
+  flex: 3;
+  display: flex;
+
+  .songData{
+    display: flex;
+    gap: 10px;
+    flex: 4;
+    align-items: center;
+    .songImg{
+      img{
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    .sdetails{
+      display: flex;
+      flex-direction: column;
+      p.sname{
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        color: #D1D1D1;
+      }   
+      p.sartist{
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        color: #949494;
+      }
+
+    }
+  }
+
+  .wish{
+    flex: 1;
+    text-align: center;
+  }
+
+
+}
