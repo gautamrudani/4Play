@@ -13,7 +13,7 @@ const SearchBar = () =>{
                         <input type="text" placeholder='Find your music' />
                     </div>
                     <div className={styles.refreshbox}>
-                        <button><img src={Search} alt="" /> Refresh</button> 
+                        <button><img src={Refresh} alt="" /> Refresh</button> 
                     </div>
             </div>
        

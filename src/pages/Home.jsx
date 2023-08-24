@@ -1,10 +1,7 @@
 import React from 'react';
 
-import Sidebar from '../component/sidebar/Sidebar';
-import MainContiner from '../component/maincontainer/MainContiner';
-import Footer from '../component/footer/Footer';
 import styles from './home.module.scss';
-
+import { Sidebar, Footer, MainContiner } from '../component';
 
 
 const Home = () =>{
