@@ -1,3 +1,17 @@
 .playervolume{
   flex: 3;
+  display: flex;
+
+
+  .controls{
+    display: flex;
+    gap: 5px;
+    align-self: center;
+    justify-content: flex-end;
+    align-items: center;
+    input[type='range'] {
+      // width:25vw;
+      height: 4px;
+    }
+  }
 }

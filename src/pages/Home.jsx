@@ -6,12 +6,14 @@ import { Sidebar, Footer, MainContiner } from '../component';
 
 const Home = () =>{
     return (
-            <div>
+            <div className={styles.homeContainer}>
                 <div className={styles.container}>
                     <Sidebar />
                     <MainContiner />
-                </div>  
+                </div>
+                <div className={styles.footerMainContainer}>  
                     <Footer />
+                </div>
             </div>
     ) ;
 }
