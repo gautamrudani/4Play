@@ -2,7 +2,7 @@
  
 
 .SongListcontainer{
-    overflow: hidden;
+    overflow: scroll;
   .songitemcontainer{
     display: flex;
     gap: 5px;
