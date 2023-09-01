@@ -7,7 +7,7 @@
   padding-top: 10px;
 
   .songimage{
-    flex: 1;
+    // flex: 1;
     margin-right: 20px;
   }
 
@@ -18,7 +18,7 @@
     gap: 15px;
     .songcontainer{
       display: flex;
-      justify-content: space-between;
+      // justify-content: space-between;
       align-items: flex-start;
       .songname{
         h5{
@@ -36,6 +36,7 @@
         display: flex;
         gap: 30px;
         align-items: center;
+        margin-left: 50px;
 
         img{
           width: 26px;

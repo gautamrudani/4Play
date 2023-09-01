@@ -5,7 +5,7 @@
   .songData{
     display: flex;
     gap: 10px;
-    flex: 5;
+    // flex: 5;
     align-items: center;
     .songImg{
       img{
@@ -40,8 +40,10 @@
   }
 
   .wish{
-    flex: 1;
+    // flex: 1;
     text-align: center;
+    margin-top: 7px;
+    margin-left: 20px;
   }
 
 
