@@ -4,7 +4,7 @@ import styles from '../maincontainer/songlist..module.scss';
 import { SongData } from '../../data.js'
 import SongItem from './SongItem';
 
-console.log(SongData);
+// console.log(SongData);
 
 const SongList = () =>{
     

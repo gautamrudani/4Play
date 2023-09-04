@@ -9,6 +9,11 @@
   .songimage{
     // flex: 1;
     margin-right: 20px;
+    width: 15%;
+    img{
+      width: 100%;
+      border-radius: 10px;
+    }
   }
 
   .songdetails{

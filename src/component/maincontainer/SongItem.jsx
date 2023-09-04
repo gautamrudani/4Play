@@ -6,7 +6,7 @@ import styles from '../maincontainer/songitem.module.scss';
 
 const SongItem = (props) =>{
   const {id, name, artist, artwork, songurl} = props;
-  console.log(id);
+  // console.log(id);
     return (
                 <div  className={cx(styles.songitemcontainer, {[styles.oddBG]: id % 2 !== 0}, {[styles.evenBG]: id % 2 === 0})}>
                     <div className={styles.songImage}>
