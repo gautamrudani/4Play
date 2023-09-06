@@ -5,11 +5,13 @@ import PlayerSongDetails from './PlayerSongDetails';
 import PlayerControl from './PlayerControl';
 import PlayerVolume from './PlayerVolume'; 
 
-const Footer = () =>{
+const Footer = ({ PlaySong }) =>{
+  let { title, artist, artwork, url } = PlaySong;
+    
     return (
             <div className={styles.footerarea}>
-                <PlayerSongDetails />
-                <PlayerControl />
+                <PlayerSongDetails PlaySong={PlaySong}/>
+                <PlayerControl songurl={url} />
                 <PlayerVolume />
             </div>
     ) ;
