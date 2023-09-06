@@ -33,13 +33,7 @@ const PlayerControl = ({songurl}) =>{
 
   const handleClick = () => {
     const song = songRef.current;
-    // const totalPlayTime = song.duration;
-    // const totalDuration = document.getElementById("totalDuration");
-    // const playing = document.getElementById("playing");
     
-    // totalDuration.textContent = formatTime(totalPlayTime);
-    // playing.max = formatTime(totalPlayTime);
-
     setIsToggled(!isToggled);
     if (!isToggled) {
       song.play();
