@@ -6,10 +6,10 @@ import SongItem from './SongItem';
 
 // console.log(SongData);
 
-const SongList = () =>{
+const SongList = ({songIndex, getSongIndex}) =>{
     
     let songs =  SongData.map((song, id) => (
-        <SongItem key={song.id} id={song.id} name = {song.title} artist = {song.artist} artwork = {song.artwork} songurl={song.url} />
+        <SongItem getSongIndex={getSongIndex} key={song.id} id={song.id} name = {song.title} artist = {song.artist} artwork = {song.artwork} songurl={song.url} />
         ))
 
     return (

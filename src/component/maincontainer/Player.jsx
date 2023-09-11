@@ -1,33 +1,33 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import styles from "../maincontainer/player.module.scss";
 // import SongImage from "../../assets/images/Image.jpg";
 import HeartIcon from "../../assets/images/Nav Bar/Icon/Heart.svg";
 import Wave from "../../assets/images/Rectangle 81.png";
 
-const Player = ({ PlaySong }) => {
+const Player = ({ PlaySong, handleClick, isToggled, songRef}) => {
   let { title, artist, artwork, url } = PlaySong;
-  const [isToggled, setIsToggled] = useState(false);
-  const songRef = useRef(null); 
+  // const [isToggled, setIsToggled] = useState(false);
+  // const songRef = useRef(null); 
 
   // console.log(isToggled);
 
-  const handleClick = () => {
+  // const handleClick = () => {
     
-    const song = songRef.current;
-    // console.log(isToggled);
+  //   const song = songRef.current;
+  //   // console.log(isToggled);
     
-    setIsToggled(!isToggled);
+  //   setIsToggled(!isToggled);
 
-    // console.log(isToggled);
-    if (!isToggled) {
-      // console.log(isToggled);
-      song.play();
-    } else {
-      song.pause();
-    }
-  };
-
+  //   // console.log(isToggled);
+  //   if (!isToggled) {
+  //     // console.log(isToggled);
+  //     song.play();
+  //   } else {
+  //     song.pause();
+  //   }
+  // };
+  console.log(isToggled);
   return (
     <div className={styles.playercontainer}>
       <div className={styles.songimage}>

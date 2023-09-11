@@ -6,10 +6,11 @@ import Next from '../../assets/images/control Icon/Next.svg'
 import Play from '../../assets/images/control Icon/Play.svg'
 import Previous from '../../assets/images/control Icon/Previous.svg'
 import Repeat from '../../assets/images/control Icon/Repeat.svg'
+import Pause from '../../assets/images/control Icon/pause.svg'
 
-const PlayerControl = ({songurl}) =>{
-  const songRef = useRef(null); 
-  const [isToggled, setIsToggled] = useState(false);
+const PlayerControl = ({id, songurl, handleClick, isToggled, songRef, songIndex, getSongIndex }) =>{
+  // const songRef = useRef(null); 
+  // const [isToggled, setIsToggled] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   // const song = songRef.current;
@@ -31,16 +32,16 @@ const PlayerControl = ({songurl}) =>{
     };
   }, [songurl]);
 
-  const handleClick = () => {
-    const song = songRef.current;
+  // const handleClick = () => {
+  //   const song = songRef.current;
     
-    setIsToggled(!isToggled);
-    if (!isToggled) {
-      song.play();
-    } else {
-      song.pause();
-    }
-  }
+  //   setIsToggled(!isToggled);
+  //   if (!isToggled) {
+  //     song.play();
+  //   } else {
+  //     song.pause();
+  //   }
+  // }
 
   const playtime = (e) =>{
     const song = songRef.current;
@@ -58,7 +59,7 @@ const PlayerControl = ({songurl}) =>{
               <div className={styles.controls}>
                 <img src={Shuffle} alt="" />
                 <img src={Previous} alt="" />
-                <img src={Play}  alt="" onClick={handleClick} />
+                <img src={isToggled ? Pause : Play }  alt="" onClick={handleClick} />
                 <img src={Next} alt="" />
                 <img src={Repeat} alt="" />
               </div>
