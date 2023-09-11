@@ -3,10 +3,11 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "../maincontainer/player.module.scss";
 // import SongImage from "../../assets/images/Image.jpg";
 import HeartIcon from "../../assets/images/Nav Bar/Icon/Heart.svg";
+import HeartFill from "../../assets/images/control Icon/Heart_fill.svg";
 import Wave from "../../assets/images/Rectangle 81.png";
 
-const Player = ({ PlaySong, handleClick, isToggled, songRef}) => {
-  let { title, artist, artwork, url } = PlaySong;
+const Player = ({ PlaySong, handleClick, isToggled, songRef, getsongWishlist}) => {
+  let { id, title, artist, artwork, url, isInWishlist } = PlaySong;
   // const [isToggled, setIsToggled] = useState(false);
   // const songRef = useRef(null); 
 
@@ -27,7 +28,7 @@ const Player = ({ PlaySong, handleClick, isToggled, songRef}) => {
   //     song.pause();
   //   }
   // };
-  console.log(isToggled);
+  // console.log(isToggled);
   return (
     <div className={styles.playercontainer}>
       <div className={styles.songimage}>
@@ -39,7 +40,7 @@ const Player = ({ PlaySong, handleClick, isToggled, songRef}) => {
             <h5>{title}</h5>
           </div>
           <div className={styles.playbtn}>
-            <img src={HeartIcon} alt="" />
+            <img src={isInWishlist ? HeartFill : HeartIcon} alt="" onClick={()=>getsongWishlist(id)} />
             <button id="playingsong" onClick={handleClick}>
               {isToggled ? "Stop" : "Play"}
             </button>

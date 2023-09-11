@@ -6,14 +6,14 @@ import PlayerControl from './PlayerControl';
 import PlayerVolume from './PlayerVolume'; 
 
 const Footer = ({ PlaySong,  handleClick, isToggled, songRef, songIndex, getSongIndex }) =>{
-  let { id, title, artist, artwork, url } = PlaySong;
+  let { id, title, artist, artwork, url, isInWishlist} = PlaySong;
     const volumeControl = () =>{
  
     }
     return (
             <div className={styles.footerarea}>
                 <PlayerSongDetails PlaySong={PlaySong}/>
-                <PlayerControl songIndex={songIndex} id={id}  getSongIndex={getSongIndex} songurl={url} handleClick={handleClick} isToggled={isToggled} songRef={songRef}/>
+                <PlayerControl  songIndex={songIndex} id={id}  getSongIndex={getSongIndex} songurl={url} handleClick={handleClick} isToggled={isToggled} songRef={songRef}/>
                 <PlayerVolume volumeControl={volumeControl} songRef={songRef}/>
             </div>
     ) ;

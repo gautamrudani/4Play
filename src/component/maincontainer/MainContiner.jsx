@@ -12,6 +12,7 @@ const MainContiner = ({
   handleClick,
   songIndex,
   getSongIndex,
+  getsongWishlist
 }) => {
   // let PlaySong = SongData[0];
   // console.log(PlaySong);
@@ -22,6 +23,7 @@ const MainContiner = ({
         PlaySong={PlaySong}
         handleClick={handleClick}
         isToggled={isToggled}
+        getsongWishlist={getsongWishlist}
       />
       <SongList songIndex={songIndex} getSongIndex={getSongIndex} />
     </div>

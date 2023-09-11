@@ -14,15 +14,31 @@ const Home = () =>{
     const [isToggled, setIsToggled] = useState(false);
     const [songIndex, setSongIndex] = useState(0);
     let PlaySong = SongData[songIndex];
+
+    let songWishlist = [];
+
+    const getsongWishlist = (id) =>{
+        PlaySong.isInWishlist = !PlaySong.isInWishlist;
+        console.log(PlaySong.isInWishlist);
+    }
     
+    // Function to toggle the wishlist status
+    // const getsongWishlist = (songId) => {
+    //     const updatedSongs = SongData.map((song) =>
+    //     song.id === songId ? { ...song, isInWishlist: !song.isInWishlist } : song
+    //     );
+    //     return updatedSongs;
+    // };
+
+  
     const getSongIndex = (e) =>{
         console.log(e)
         setSongIndex(e-1);
         // setIsToggled(true);
-        // if (isToggled) {
-        //     songRef.current.pause();
-        //     setIsToggled(true);
-        // }
+        if (isToggled) {
+            songRef.current.pause();
+            setIsToggled(true);
+        }
     }
 
     useEffect(() => {
@@ -47,10 +63,10 @@ const Home = () =>{
             <div className={styles.homeContainer}>
                 <div className={styles.container}>
                     <Sidebar />
-                    <MainContiner songIndex={songIndex}  getSongIndex={getSongIndex} PlaySong={PlaySong} handleClick={handleClick} isToggled={isToggled}  songRef={songRef}/> 
+                    <MainContiner getsongWishlist={getsongWishlist} songIndex={songIndex}  getSongIndex={getSongIndex} PlaySong={PlaySong} handleClick={handleClick} isToggled={isToggled}  songRef={songRef}/> 
                 </div>
                 <div className={styles.footerMainContainer} >  
-                    <Footer songIndex={songIndex}  getSongIndex={getSongIndex} PlaySong={PlaySong} handleClick={handleClick} isToggled={isToggled} songRef={songRef}/>
+                    <Footer getsongWishlist={getsongWishlist} songIndex={songIndex}  getSongIndex={getSongIndex} PlaySong={PlaySong} handleClick={handleClick} isToggled={isToggled} songRef={songRef}/>
                 </div>
             </div>
     ) ;
