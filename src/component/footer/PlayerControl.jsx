@@ -68,7 +68,7 @@ const PlayerControl = ({
       <div className={styles.controls}>
         <img src={Shuffle} alt="" />
         <img src={Previous} alt="" onClick={() => getSongIndex(--id)}/>
-        <img src={isToggled ? Pause : Play} alt="" onClick={handleClick} />
+        <img src={isToggled ? Pause : Play} alt="" onClick={handleClick} className={styles.heartIcon} />
         <img src={Next} alt="" onClick={() => getSongIndex(++id)} />
         <img src={Repeat} alt="" />
       </div>

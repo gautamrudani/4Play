@@ -5,8 +5,6 @@ import { Sidebar, Footer, MainContiner } from "../component";
 import { SongData } from "../data.js";
 
 const Home = () => {
-  // const songIndex = useRef(0);
-
   // let songIndex = 0;
   const songRef = useRef(null);
   const [isToggled, setIsToggled] = useState(false);
@@ -14,7 +12,7 @@ const Home = () => {
   let PlaySong = SongData[songIndex];
   const totalSong = SongData.length;
 
-  let songWishlist = [];
+  // let songWishlist = [];
 
   const getsongWishlist = (id) => {
     PlaySong.isInWishlist = !PlaySong.isInWishlist;
@@ -25,15 +23,20 @@ const Home = () => {
     console.log(SongData.length);
     if (e > 0 && e <= totalSong) {
       setSongIndex(e - 1);
-      // setIsToggled(true);
       if (isToggled) {
         songRef.current.pause();
-        setIsToggled(true);
+        setIsToggled(false);
       }
+    } else if(e < 0){
+      e = totalSong;
+      setSongIndex(e - 1);
+    } else if(e > totalSong){
+      e = 0;
+      setSongIndex(0);
     }
   };
 
-  useEffect(() => {}, [isToggled, PlaySong]);
+  useEffect(() => {}, [isToggled]);
 
   const handleClick = () => {
     // console.log(SongData[0].url);
@@ -51,9 +54,8 @@ const Home = () => {
 
   const volumeControl = (e) => {
     console.log(e.target.value);
-    let songV= e.target.value
+    let songV = e.target.value;
     songRef.current.volume = songV;
-
   };
 
   return (
