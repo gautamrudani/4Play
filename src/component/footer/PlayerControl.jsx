@@ -17,6 +17,7 @@ const PlayerControl = ({
   songIndex,
   getSongIndex,
   
+  
 }) => {
   // const songRef = useRef(null);
   // const [isToggled, setIsToggled] = useState(false);

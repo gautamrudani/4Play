@@ -13,11 +13,12 @@ const Footer = ({
   songIndex,
   getSongIndex,
   volumeControl,
+  getsongWishlist,
 }) => {
   let { id, title, artist, artwork, url, isInWishlist } = PlaySong;
   return (
     <div className={styles.footerarea}>
-      <PlayerSongDetails PlaySong={PlaySong} />
+      <PlayerSongDetails PlaySong={PlaySong}  getsongWishlist={getsongWishlist} />
       <PlayerControl
         songIndex={songIndex}
         id={id}
@@ -26,6 +27,7 @@ const Footer = ({
         handleClick={handleClick}
         isToggled={isToggled}
         songRef={songRef}
+       
       />
       <PlayerVolume volumeControl={volumeControl} songRef={songRef} />
     </div>

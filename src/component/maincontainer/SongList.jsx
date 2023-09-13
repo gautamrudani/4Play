@@ -5,7 +5,7 @@ import { SongData } from '../../data.js'
 import SongItem from './SongItem';
 
 // console.log(SongData);
-
+ 
 const SongList = ({songIndex, getSongIndex}) =>{
     
     let songs =  SongData.map((song, id) => (

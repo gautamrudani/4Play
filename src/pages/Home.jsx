@@ -9,14 +9,25 @@ const Home = () => {
   const songRef = useRef(null);
   const [isToggled, setIsToggled] = useState(false);
   const [songIndex, setSongIndex] = useState(0);
-  let PlaySong = SongData[songIndex];
+  const [songs, setSongs] = useState(SongData);
+  let PlaySong = songs[songIndex];
   const totalSong = SongData.length;
 
   // let songWishlist = [];
 
-  const getsongWishlist = (id) => {
-    PlaySong.isInWishlist = !PlaySong.isInWishlist;
-    console.log(PlaySong.isInWishlist);
+  const getsongWishlist = (songid) => {
+    // console.log(songid);
+    // console.log(songs[songid-1].id); 
+    // console.log("haha");
+    const updatedSongs = [...songs]; // Clone the songs array
+    const songToUpdate = updatedSongs.find((song) => song.id === songid);
+    // console.log(songToUpdate);
+    if (songToUpdate) {
+      songToUpdate.isInWishlist = !songToUpdate.isInWishlist;
+      // console.log(updatedSongs);
+      setSongs(updatedSongs); // Update the state with the updated songs array
+    }
+   
   };
 
   const getSongIndex = (e) => {

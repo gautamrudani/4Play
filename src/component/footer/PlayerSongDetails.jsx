@@ -6,8 +6,8 @@ import Heart from '../../assets/images/Nav Bar/Icon/Heart.svg';
 import FillHeart from '../../assets/images/control Icon/Heart_fill.svg';
 
 
-const PlayerSongDetails = ({ PlaySong }) =>{
-  let { title, artist, artwork, url , isInWishlist} = PlaySong;
+const PlayerSongDetails = ({ PlaySong,getsongWishlist }) =>{
+  let { id,title, artist, artwork, url , isInWishlist} = PlaySong;
 
     return (
             <div className={styles.playersongsetails}>
@@ -22,7 +22,7 @@ const PlayerSongDetails = ({ PlaySong }) =>{
                         </div>
                     </div>
                     <div className={styles.wish}>
-                            <img src={isInWishlist? FillHeart: Heart} alt="" /> 
+                            <img src={isInWishlist? FillHeart: Heart} alt="" onClick={()=>getsongWishlist(id)} /> 
                     </div>
             </div>
     ) ;

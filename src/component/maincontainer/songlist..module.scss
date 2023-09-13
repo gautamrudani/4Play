@@ -3,7 +3,11 @@
 
 .SongListcontainer{
     overflow: hidden;
+    flex: 8;
+    overflow-y: auto;
+
   .songitemcontainer{
+    position: sticky;
     display: flex;
     gap: 5px;
     font-size: 14px;
@@ -35,9 +39,9 @@
 
   .songItems{
     margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    height: 90%;
-    overflow-y: scroll;
+    // display: flex;
+    // flex-direction: column;
+    // height: 90%;
+    // overflow-y: scroll;
   }
 }
