@@ -10,24 +10,51 @@ const Home = () => {
   const [isToggled, setIsToggled] = useState(false);
   const [songIndex, setSongIndex] = useState(0);
   const [songs, setSongs] = useState(SongData);
-  let PlaySong = songs[songIndex];
+  const [queryvalue, setQueryValue] = useState("");
+
+  let PlaySong = SongData[songIndex];
+  
   const totalSong = SongData.length;
 
-  // let songWishlist = [];
+  const getqueryvalue = (e) => {
+    const query = e.target.value;
+    // e.preventDefault();
+    setQueryValue(query);
+    console.log(query);
+
+    const resultSong = SongData.filter((song) =>
+      song.title.toLowerCase().includes(query.toLowerCase())
+    );
+
+    console.log(resultSong.length);
+    // if (resultSong.length !== 0) {
+      setSongs(resultSong);
+      console.log("song are there");
+    // } else {
+      console.log("song are 0");
+      // setSongIndex(0);
+    // }
+    // setResultSong((songs) => {})
+  };
+
+  const resetsearch = () => {
+    console.log("reset pressed");
+    setQueryValue("");
+    // const resultSong = songs.filter((song)=> song.title.toLowerCase().includes(''))
+    setSongs(SongData);
+  };
 
   const getsongWishlist = (songid) => {
-    // console.log(songid);
-    // console.log(songs[songid-1].id); 
-    // console.log("haha");
     const updatedSongs = [...songs]; // Clone the songs array
+    // console.log(updatedSongs);
     const songToUpdate = updatedSongs.find((song) => song.id === songid);
     // console.log(songToUpdate);
     if (songToUpdate) {
       songToUpdate.isInWishlist = !songToUpdate.isInWishlist;
-      // console.log(updatedSongs);
+    //  console.log();
+      console.log(updatedSongs);
       setSongs(updatedSongs); // Update the state with the updated songs array
     }
-   
   };
 
   const getSongIndex = (e) => {
@@ -38,10 +65,10 @@ const Home = () => {
         songRef.current.pause();
         setIsToggled(false);
       }
-    } else if(e < 0){
+    } else if (e < 0) {
       e = totalSong;
       setSongIndex(e - 1);
-    } else if(e > totalSong){
+    } else if (e > totalSong) {
       e = 0;
       setSongIndex(0);
     }
@@ -74,6 +101,9 @@ const Home = () => {
       <div className={styles.container}>
         <Sidebar />
         <MainContiner
+          resetsearch={resetsearch}
+          queryvalue={queryvalue}
+          getqueryvalue={getqueryvalue}
           getsongWishlist={getsongWishlist}
           songIndex={songIndex}
           getSongIndex={getSongIndex}
@@ -81,6 +111,7 @@ const Home = () => {
           handleClick={handleClick}
           isToggled={isToggled}
           songRef={songRef}
+          songs={songs}
         />
       </div>
       <div className={styles.footerMainContainer}>

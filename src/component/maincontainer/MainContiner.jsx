@@ -12,20 +12,25 @@ const MainContiner = ({
   handleClick,
   songIndex,
   getSongIndex,
-  getsongWishlist
+  getsongWishlist,
+  queryvalue,
+  getqueryvalue,
+  songs,
+  resetsearch
 }) => {
   // let PlaySong = SongData[0];
   // console.log(PlaySong);
   return (
     <div className={styles.maincontainer}>
-      <SearchBar />
+      <SearchBar  queryvalue={queryvalue}
+          getqueryvalue={getqueryvalue} resetsearch={resetsearch} />
       <Player
         PlaySong={PlaySong}
         handleClick={handleClick}
         isToggled={isToggled}
         getsongWishlist={getsongWishlist}
       />
-      <SongList songIndex={songIndex} getSongIndex={getSongIndex} />
+      <SongList songIndex={songIndex} getSongIndex={getSongIndex}  songs={songs}/>
     </div>
   );
 };
