@@ -4,6 +4,7 @@ import styles from "./home.module.scss";
 import { Sidebar, Footer, MainContiner } from "../component";
 import { SongData } from "../data.js";
 
+
 const Home = () => {
   // let songIndex = 0;
   const songRef = useRef(null);
@@ -13,7 +14,7 @@ const Home = () => {
   const [queryvalue, setQueryValue] = useState("");
 
   let PlaySong = SongData[songIndex];
-  
+
   const totalSong = SongData.length;
 
   const getqueryvalue = (e) => {
@@ -28,11 +29,11 @@ const Home = () => {
 
     console.log(resultSong.length);
     // if (resultSong.length !== 0) {
-      setSongs(resultSong);
-      console.log("song are there");
+    setSongs(resultSong);
+    console.log("song are there");
     // } else {
-      console.log("song are 0");
-      // setSongIndex(0);
+    console.log("song are 0");
+    // setSongIndex(0);
     // }
     // setResultSong((songs) => {})
   };
@@ -51,7 +52,7 @@ const Home = () => {
     // console.log(songToUpdate);
     if (songToUpdate) {
       songToUpdate.isInWishlist = !songToUpdate.isInWishlist;
-    //  console.log();
+      //  console.log();
       console.log(updatedSongs);
       setSongs(updatedSongs); // Update the state with the updated songs array
     }
@@ -100,6 +101,7 @@ const Home = () => {
     <div className={styles.homeContainer}>
       <div className={styles.container}>
         <Sidebar />
+       
         <MainContiner
           resetsearch={resetsearch}
           queryvalue={queryvalue}

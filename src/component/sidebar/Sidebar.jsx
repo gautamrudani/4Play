@@ -20,9 +20,9 @@ const Sidebar = () =>{
                 </div>
                 <div className={styles.menu_items}>
                     <div className={styles.Navbar}>
-                        <Navitem label="Home" link="#" icon={Home} />
+                        <Navitem label="Home" link="/" icon={Home} />
                         <Navitem label="My Schedule" link="#" icon={Schedule} />
-                        <Navitem label="Like" link="#" icon={Heart} />
+                        <Navitem label="Like" link="/like" icon={Heart} />
                         <Navitem label="My Playlist" link="#" icon={Playlist} />
                         <Navitem label="My Playlist 1" link="#"  />
                         <Navitem label="My Playlist 2" link="#"  />
