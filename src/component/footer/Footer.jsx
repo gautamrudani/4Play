@@ -14,6 +14,7 @@ const Footer = ({
   getSongIndex,
   volumeControl,
   getsongWishlist,
+  shuffleSong,
 }) => {
   let { id, title, artist, artwork, url, isInWishlist } = PlaySong;
   return (
@@ -27,7 +28,7 @@ const Footer = ({
         handleClick={handleClick}
         isToggled={isToggled}
         songRef={songRef}
-       
+        shuffleSong={shuffleSong}
       />
       <PlayerVolume volumeControl={volumeControl} songRef={songRef} />
     </div>

@@ -16,7 +16,7 @@ const PlayerControl = ({
   songRef,
   songIndex,
   getSongIndex,
-  
+  shuffleSong
   
 }) => {
   // const songRef = useRef(null);
@@ -30,6 +30,12 @@ const PlayerControl = ({
 
     song.addEventListener("timeupdate", () => {
       setCurrentTime(song.currentTime);
+    });
+
+    song.addEventListener("ended", () => {
+      console.log('Audio has ended');
+      // setCurrentTime(song.currentTime);
+      getSongIndex(++id)
     });
 
     song.addEventListener("loadedmetadata", () => {
@@ -57,6 +63,7 @@ const PlayerControl = ({
     const song = songRef.current;
     const newTime = e.target.value;
     song.currentTime = newTime;
+
   };
 
   function formatTime(seconds) {
@@ -67,7 +74,7 @@ const PlayerControl = ({
   return (
     <div className={styles.playercontrol}>
       <div className={styles.controls}>
-        <img src={Shuffle} alt="" />
+        <img src={Shuffle} alt="" onClick={()=>shuffleSong()}/>
         <img src={Previous} alt="" onClick={() => getSongIndex(--id)}/>
         <img src={isToggled ? Pause : Play} alt="" onClick={handleClick} className={styles.heartIcon} />
         <img src={Next} alt="" onClick={() => getSongIndex(++id)} />
