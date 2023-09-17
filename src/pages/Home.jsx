@@ -82,13 +82,24 @@ const Home = () => {
     setSongs(shuffle(shuffleSongs));
   }
   const getSongIndex = (e) => {
-    console.log(SongData.length);
+    // console.log(SongData.length);
     if (e > 0 && e <= totalSong) {
+      console.log(songRef.current);
       setSongIndex(e - 1);
+      
       if (isToggled) {
         songRef.current.pause();
         setIsToggled(false);
       }
+
+      
+      // // Play the new song
+      // const newSong = songs[e - 1];
+      // songRef.current.src = newSong.url;
+      // songRef.current.load();
+      // songRef.current.play();
+
+
     } else if (e < 0) {
       e = totalSong;
       setSongIndex(e - 1);
@@ -108,6 +119,7 @@ const Home = () => {
     // console.log(isToggled);
     setIsToggled(!isToggled);
     if (!isToggled) {
+      song.load();
       song.play();
     } else {
       song.pause();
