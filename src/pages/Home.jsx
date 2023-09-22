@@ -81,7 +81,7 @@ const Home = () => {
     const shuffleSongs = [...songs]; // Clone the songs array
     setSongs(shuffle(shuffleSongs));
   }
-  const getSongIndex = (e) => {
+  const getSongIndex = async  (e) => {
     // console.log(SongData.length);
     if (e > 0 && e <= totalSong) {
       console.log(songRef.current);
@@ -91,13 +91,19 @@ const Home = () => {
         songRef.current.pause();
         setIsToggled(false);
       }
-
       
-      // // Play the new song
-      // const newSong = songs[e - 1];
-      // songRef.current.src = newSong.url;
-      // songRef.current.load();
-      // songRef.current.play();
+      // Play the new song
+      const newSong = songs[e - 1];
+      songRef.current.src = newSong.url;
+      try {
+        await songRef.current.load(); // Wait for the audio to load
+        await songRef.current.play(); // Wait for the audio to start playing
+        setIsToggled(true);
+        // Update the song index
+        setSongIndex(e - 1);
+      } catch (error) {
+        console.error("Error playing the audio:", error);
+      }
 
 
     } else if (e < 0) {

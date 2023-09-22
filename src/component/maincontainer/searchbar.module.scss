@@ -3,7 +3,8 @@
 .searchbar{
   display: flex;
   flex-direction: row;
-  flex: 1;
+  // flex: 1;
+  height: 50px;
 
   .searchInput{
     flex: 6;
